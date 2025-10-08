@@ -1,0 +1,17 @@
+# terraform
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/
+
+
+# build artifacts
+terraform/build/
+*.zip
+
+
+# python
+__pycache__/
+*.pyc
+
+
+.env
