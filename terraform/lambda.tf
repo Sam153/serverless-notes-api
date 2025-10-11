@@ -25,4 +25,12 @@ REGION = var.aws_region
 
 
 depends_on = [null_resource.package_lambda]
+
+  # Ignore source_code_hash changes to prevent CI apply errors
+  lifecycle {
+    ignore_changes = [
+      source_code_hash
+    ]
+  }
+
 }

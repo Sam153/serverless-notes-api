@@ -22,6 +22,7 @@ jobs:
 
     # Build the Lambda BEFORE terraform init/apply
     - name: Build Lambda zip
+      working-directory: ./terraform
       run: |
         chmod +x scripts/build_lambda.sh
         ./scripts/build_lambda.sh
