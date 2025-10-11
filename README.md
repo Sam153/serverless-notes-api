@@ -1,5 +1,5 @@
 # Serverless Notes API (Terraform)
-
+# Added to trigger to CI pipeline
 
 Simple Notes CRUD API (Create + Read) implemented as a serverless stack:
 - AWS Lambda (Python)
