@@ -20,6 +20,13 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-south-1
 
+    # Build the Lambda BEFORE terraform init/apply
+    - name: Build Lambda zip
+      working-directory: ./terraform
+      run: |
+        chmod +x build_lambda.sh
+        ./build_lambda.sh
+
     - name: Terraform Init
       working-directory: ./terraform
       run: terraform init
