@@ -24,7 +24,7 @@ jobs:
     - name: Build Lambda zip
       working-directory: ./terraform
       run: |
-        chmod +x build_lambda.sh
+        chmod +x scripts/build_lambda.sh
         ./scripts/build_lambda.sh
 
     - name: Terraform Init
