@@ -31,6 +31,12 @@ jobs:
       working-directory: ./terraform
       run: terraform init
 
+    # Explicit plan output
+    - name: Terraform Plan
+      working-directory: ./terraform
+      run: terraform plan -out=tfplan
+
+    # Apply the same plan (no re-hash)
     - name: Terraform Apply
       working-directory: ./terraform
-      run: terraform apply -auto-approve
+      run: terraform apply -auto-approve tfplan

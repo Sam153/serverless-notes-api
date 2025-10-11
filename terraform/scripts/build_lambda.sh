@@ -10,7 +10,7 @@ mkdir -p "$BUILD_DIR"
 
 
 cd "$LAMBDA_SRC_DIR"
-zip -r "../build/lambda.zip" .
+zip -r -X "../build/lambda.zip" .
 
 
 echo "Created $PWD/../build/lambda.zip"
