@@ -26,7 +26,14 @@ def lambda_handler(event, context):
     if method == 'POST':
         body = event.get('body')
         if isinstance(body, str):
-            body = json.loads(body)
+            body = body.strip()
+            if body:
+                body = json.loads(body)
+            else:
+                body = {}
+        elif body is None:
+            body = {}
+
         item = {
             'id': str(body.get('id')),
             'note': body.get('note')
